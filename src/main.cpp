@@ -120,12 +120,14 @@ void loop() {
   attachInterrupt(digitalPinToInterrupt(BUT_BS), &BS_IRQ, FALLING);
   attachInterrupt(digitalPinToInterrupt(BUT_CS), &CS_IRQ, FALLING);
   wdt_reset();
-  Serial.println("on");
+  
 }
 //manual channel switch interrupt service routine
 void CS_IRQ(){
   detachInterrupt(digitalPinToInterrupt(BUT_CS));
-  if(millis()> (bounce_time2+200)){
+  // if(millis()> (bounce_time2+200)){
+  delay(200);
+  if(true){
     bounce_time2 = millis();
 
     if(!digitalRead(channel_lock)){
@@ -151,7 +153,9 @@ void CS_IRQ(){
 //manual band switch interrupt service routine
 void BS_IRQ(){
   detachInterrupt(digitalPinToInterrupt(BUT_BS));
-  if(millis()> (bounce_time+200)){
+  // if(millis()> (bounce_time+200)){
+  delay(200);
+  if(true){
     bounce_time = millis();
 
     if(!digitalRead(channel_lock)){
@@ -210,6 +214,7 @@ void change_band(int bandselect){
       break;
   }
   search_channel();
+  write_digit(bandselect+1);
 }
 
 //LSB counting
@@ -290,7 +295,7 @@ void search_channel(){
 
   change_channel(rssi_pair[1]);
   channel_counter = rssi_pair[1];
-  write_digit(rssi_pair[1]+1);
+  // write_digit(rssi_pair[1]+1);
 
   Serial.print(F("channel number:"));
   Serial.println(rssi_pair[1]+1);
