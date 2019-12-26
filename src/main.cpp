@@ -33,8 +33,8 @@ const int BUT_CS = 3;
 
 //channel switches
 const int CS1 = 6;
-const int CS2 = 7;
-const int CS3 = 8;
+const int CS2 = 8;
+const int CS3 = 7;
 
 //band switches
 const int BS1 = 9;
@@ -47,13 +47,13 @@ const int PIN_RSSI = A7;
 const int channel_lock = 4;
 
 //7 segment display
-const int SS_A = A0;
-const int SS_B = A1;
+const int SS_A = A5;
+const int SS_B = A6;
 const int SS_C = A2;
-const int SS_D = A3;
-const int SS_E = A4;
-const int SS_F = A5;
-const int SS_G = 11;
+const int SS_D = A1;
+const int SS_E = A0;
+const int SS_F = A4;
+const int SS_G = A3;
 
 
 void setup() {
