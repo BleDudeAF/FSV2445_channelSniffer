@@ -98,6 +98,9 @@ void setup() {
 
   attachInterrupt(digitalPinToInterrupt(BUT_BS), &BS_IRQ, FALLING);
   attachInterrupt(digitalPinToInterrupt(BUT_CS), &CS_IRQ, FALLING);
+
+  change_band(1);
+  change_channel(3);
 }
 
 void loop() {
